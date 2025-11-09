@@ -19,7 +19,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd ~/planet-far-away-1-app
+            cd ~/PlanetFarAway-Js
             git pull origin main
 
             docker compose up --build -d
