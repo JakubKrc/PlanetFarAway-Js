@@ -54,8 +54,9 @@ function inputkeyboard (whichplayer, whichvalue, evt){
 		imageLoadingDoneSoStartGame(); 
 	}
 	
+	if(stopGame===2) winGame()
 	if((evt.keyCode===13)&&(stopGame===2)&&(gameInterval===null)) {
-		window.location.href = "../game.html";
+		window.location.href = "game.html";
 	}
 	
 }
