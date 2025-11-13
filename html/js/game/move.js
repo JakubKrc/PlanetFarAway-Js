@@ -26,7 +26,7 @@ function inputkeyboard (whichplayer, whichvalue, evt){
 		if(evt.keyCode==40) menuRow+=0.5
 		if(menuRow<-0.5) menuRow=2
 		if(menuRow>2.5) menuRow=0
-		if(evt.keyCode==13 && menuRow==1 && menuReadMe!=1) {
+		if(evt.keyCode==13 && menuRow==1) {
 			gameInterval=null;
 			menuMoje=0;
 			transitionCheckpoint.level = "XXXX";
@@ -34,15 +34,14 @@ function inputkeyboard (whichplayer, whichvalue, evt){
 			stopGame=0; 
 			imageLoadingDoneSoStartGame(); 
 		}
-		if(evt.keyCode==13 && menuRow==0 && menuReadMe!=1 && transitionCheckpoint.level!="XXXX") {
+		if(evt.keyCode==13 && menuRow==0 && transitionCheckpoint.level!="XXXX") {
 			gameInterval=null;
 			menuMoje=0;
 			eval (episode + "('"+transitionCheckpoint.level+"', '"+transitionCheckpoint.leveltransitionname+"')") 
 			stopGame=0; 
 			imageLoadingDoneSoStartGame(); 
 		}
-		if(evt.keyCode==13 && menuRow==2 && menuReadMe!=1) {menuReadMe=1;menuMoje=1}
-		if(evt.keyCode==27 && menuReadMe==1) {menuReadMe=0;menuMoje=1}
+		if(evt.keyCode==13 && menuRow==2) {window.location.href = 'game.html'}
 		menu();
 	}
 
@@ -133,41 +132,27 @@ function winGame() {
 }
 
 function menu() {
-
-	if(menuReadMe!=1)
-		canvasCtx.drawImage(gamePic[59],0, 0);
 	
 	if(menuMoje==1){
 		canvasCtx.drawImage(gamePic[59],0, 0);
 		menuMoje=2
 		stopGame=3;
 		clearInterval(gameInterval)	
-		
-		if(menuReadMe==1){
-			canvasCtx.font = "12px Comic Sans MS";
-			 canvasCtx.fillStyle = "yellow"
-			  canvasCtx.textAlign = "center";
-			  canvasCtx.fillText("Use down key", canvas.width/2, canvas.height/2); 
-			  canvasCtx.fillText("to look down.", canvas.width/2, canvas.height/2+20);
-			  canvasCtx.fillText("Esc to menu.", canvas.width/2, canvas.height/2+40);
-		}
 	}
 	
-	if(menuReadMe==0){
-		canvasCtx.font = "15px Comic Sans MS";
-		 if(menuRow == 0) {
-			canvasCtx.fillStyle = "red"; 
-		 } else if(transitionCheckpoint.level == "XXXX") canvasCtx.fillStyle = "black"; else canvasCtx.fillStyle="blue";
-		  canvasCtx.textAlign = "center";
-		  if(transitionCheckpoint.level == "XXXX"){
-		  	canvasCtx.fillText("Checkpoint", canvas.width/2, canvas.height/2-7); 
-			canvasCtx.fillText("(not set)", canvas.width/2, canvas.height/2+2); 
-		  }else
-			canvasCtx.fillText("Checkpoint", canvas.width/2, canvas.height/2); 
-		  if(menuRow == 1) canvasCtx.fillStyle = "red"; else canvasCtx.fillStyle="blue"
-		  canvasCtx.fillText("Restart Episode", canvas.width/2, canvas.height/2+20);
-		 if(menuRow == 2) canvasCtx.fillStyle = "red"; else canvasCtx.fillStyle="blue"
-		  canvasCtx.fillText("ReadMe", canvas.width/2, canvas.height/2+40);
-	}
+	canvasCtx.font = "15px Comic Sans MS";
+	if(menuRow == 0) {
+	canvasCtx.fillStyle = "red"; 
+	} else if(transitionCheckpoint.level == "XXXX") canvasCtx.fillStyle = "black"; else canvasCtx.fillStyle="yellowf";
+	canvasCtx.textAlign = "center";
+	if(transitionCheckpoint.level == "XXXX"){
+	canvasCtx.fillText("Checkpoint", canvas.width/2, canvas.height/2-7); 
+	canvasCtx.fillText("(not set)", canvas.width/2, canvas.height/2+2); 
+	}else
+	canvasCtx.fillText("Load checkpoint", canvas.width/2, canvas.height/2); 
+	if(menuRow == 1) canvasCtx.fillStyle = "red"; else canvasCtx.fillStyle="blue"
+	canvasCtx.fillText("Restart Episode", canvas.width/2, canvas.height/2+20);
+	if(menuRow == 2) canvasCtx.fillStyle = "red"; else canvasCtx.fillStyle="blue"
+	canvasCtx.fillText("Exit to menu", canvas.width/2, canvas.height/2+40);
 
 }
