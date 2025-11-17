@@ -1,7 +1,7 @@
 services:
   PlanetFarAway-Js:
     image: nginx:alpine
-    container_name: PlanetFarAway-Js
+    container_name: planet-far-away-js
     expose:
       - "80"
     volumes:
