@@ -1,5 +1,5 @@
 services:
-  PlanetFarAway-Js:
+  planet-far-away-js:
     image: nginx:alpine
     container_name: planet-far-away-js
     expose:
