@@ -60,7 +60,7 @@
 		
 		.popupclass select, button{
 			background-color: black;
-			border: 2px solid #4CAF50; /* Green */
+			border: 2px solid #4CAF50;
 		}
 		
 		.popupclass a, select, button{
@@ -83,6 +83,27 @@
 			width:		10%;
 			opacity:	1;
 		}
+
+		.big-arrow {
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+
+			padding-right: 2vw;
+			font-size: 1vw;
+			margin-left: 3.5vw;
+
+			background-image: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="%234CAF50"><path d="M7 10l5 5 5-5z"/></svg>');
+			background-repeat: no-repeat;
+			background-position: left 8.5vw center;
+			background-size: 90px;
+		}
+
+		.popupclass button {
+			border-radius: 10px;
+			margin-right:1%;
+			padding: 0.5vw;
+		}
 		
 	</style>
 	
@@ -92,23 +113,26 @@
 	
 	<div class="titleofprogramparent" style="margin-top:10%;">
 	
-		<a href="javascript:openclose();">
+		<!-- <a href="javascript:openclose();">
 			<img src="graphics/planetlogo.png"        
                 class="titleofprogramchild" alt="Planet far away">
-		</a> 
+		</a> -->
+
+		<img src="graphics/planetlogo.png"        
+                class="titleofprogramchild" alt="Planet far away">
 	
 		<div id="popup" class="popupclass">
 				
 			<form action="planetfaraway.html">
 				
-				<button style="margin-right:1%;">Start episode:</button>
+				<button>Start episode:</button>
 				
-				<select name="episodes" style="margin-right:5%;">
+				<select name="episodes" class="big-arrow" style="margin-right:5%;">
 					<option value="Still almost nothing" >Still almost nothing</option>
   					<option value="Almost nothing">Almost nothing</option>
 				</select> 
 				
-				<a href="readme.html">READ!.ME</a>	
+				<a href="readme.html">READ.ME</a>	
 				
 			</form>
 		
