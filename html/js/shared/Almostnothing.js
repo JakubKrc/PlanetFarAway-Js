@@ -46,9 +46,8 @@ if(levelname=='level1'){
 objects[1]= new leveltransitionclass(6,100,86,16,16,'start','entrance1')
 objects[2]= new leveltransitionclass(7,232,176,16,16,'endgame','XXXX')
 objects[3]= new basicenemyclass(8,129,275,16,20,100,"right",1.286)	
-//objects[4]= new leveltransitionclass(1,296,115,16,16,100,1,1.286)
-objects[5]= new leveltransitionclass(6,570,390,16,16,'level2','entrance2')
-objects[6]= new leveltransitionclass(6,622,390,16,16,'level2','entrance3')
+objects[4]= new leveltransitionclass(6,570,390,16,16,'level2','entrance2')
+objects[5]= new leveltransitionclass(6,622,390,16,16,'level2','entrance3')
 	
 tiles[0]=[0,0,0,0,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 tiles[1]=[0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
